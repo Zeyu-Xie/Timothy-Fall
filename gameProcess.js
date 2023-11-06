@@ -5,7 +5,7 @@ const gameProcess = (game, height, width) => {
         game[i] = game[i-1]
     }
     const str = new Array(width).fill(" ")
-    str[randomInt(0, width)] = (randomInt(0, 2) == 0) ? "b": " "
+    str[randomInt(0, width)] = (randomInt(0, 4) == 0) ? "b": " "
     game[0]=str.join("")
     return game
 }

@@ -1,16 +1,11 @@
 const randomInt = require("./randomInt")
 const gamePrint = require("./gamePrint")
 const gameProcess = require("./gameProcess")
+const loop = require("./loop")
 
-game = new Array(10).fill(new Array(20).fill(" ").join(""))
+const height = 10
+const width = 30
 
-for(let i=0;i<10;i++) {
-    const str = game[i].split("")
-    str[randomInt(0, 20)] = (randomInt(0,2) == 0) ? "b" : ""
-    game[i]=str.join("")
-}
+game = new Array(height).fill(new Array(width).fill(" ").join(""))
 
-for(let i=0;i<1000;i++) {
-    gamePrint(game, 10, 20)
-    game = gameProcess(game, 10, 20)
-}
+loop(game, height, width)
